@@ -27,6 +27,7 @@ func main() {
 
 // creates a new iso out of the directory structure at isoDir and writes it to outPath
 func genISO(filesPath, outPath string, size int64) error {
+	os.RemoveAll(outPath)
 	d, err := diskfs.Create(outPath, size, diskfs.Raw)
 	if err != nil {
 		return err
