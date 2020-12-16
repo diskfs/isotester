@@ -85,6 +85,7 @@ func genISO(filesPath, outPath string, size int64) error {
 					Platform:  iso9660.BIOS,
 					Emulation: iso9660.NoEmulation,
 					BootFile:  "isolinux/isolinux.bin",
+					BootTable: true,
 					LoadSize:  4,
 				},
 				{
