@@ -82,9 +82,10 @@ func genISO(filesPath, outPath string, size int64) error {
 			BootCatalog: "isolinux/boot.cat",
 			Entries: []*iso9660.ElToritoEntry{
 				{
-					Platform:    iso9660.BIOS,
-					Emulation:   iso9660.NoEmulation,
-					BootFile:    "isolinux/isolinux.bin",
+					Platform:  iso9660.BIOS,
+					Emulation: iso9660.NoEmulation,
+					BootFile:  "isolinux/isolinux.bin",
+					LoadSize:  4,
 				},
 				{
 					Platform:  iso9660.EFI,
